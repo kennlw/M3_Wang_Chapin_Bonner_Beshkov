@@ -10,12 +10,12 @@ import matplotlib.pyplot as plt
 displayinC = True
 
 initial_house_temp = 25.5556
-r = 10
+r = 9.5
 U = 1 / r
 house_outside_heat_capacity = .0229 * 1000 # W/Degrees C
 house_inside_heat_capacity = .016854 * 1000 # W/Degrees C
-house_floor_area = 273 # Square meters
-house_external_perimeter = 16.53 * 4 # Meters
+house_floor_area = 88 # Square meters
+house_external_perimeter = 9.38083152 * 4 # Meters
 house_height = 3.2 * 1 # Meters
 wall_thickness = 0.05 # Meters
 wall_volume = wall_thickness * house_height * house_external_perimeter # Cubic meters
@@ -28,6 +28,8 @@ for line in tempsfile:
         temps.append(float(num_str))
 insidetemps = []
 outsidetemps = []
+print(U)
+print(C)
 
 housetemp = initial_house_temp
 
@@ -53,5 +55,6 @@ for i in range(len(temps)):
     print("Outside Temp: " + str(dispoutsidetemp))
     print("Inside Temp: " + str(disphousetemp))
     print("")
+    # print(str(disphousetemp))
     outsidetemps.append(dispoutsidetemp)
     insidetemps.append(disphousetemp)
