@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 # Assumptions:
 # Rooms are square
@@ -25,7 +26,8 @@ temps = []
 for line in tempsfile:
     for num_str in line.split():
         temps.append(float(num_str))
-
+insidetemps = []
+outsidetemps = []
 
 housetemp = initial_house_temp
 
@@ -45,6 +47,10 @@ for i in range(len(temps)):
     else:
        dispoutsidetemp = temps[i]
     dispoutsidetemp = round(dispoutsidetemp, 4)
-    disphousetemp = round(housetemp, 4)
+    disphousetemp = round(disphousetemp, 4)
+    print("Time: " + str(i))
     print("Outside Temp: " + str(dispoutsidetemp))
     print("Inside Temp: " + str(disphousetemp))
+    print("")
+    outsidetemps.append(dispoutsidetemp)
+    insidetemps.append(disphousetemp)
