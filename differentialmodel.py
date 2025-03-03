@@ -7,16 +7,16 @@ import matplotlib.pyplot as plt
 
 # Mode:
 # Either F or C Display
-displayinC = False
+displayinC = True
 
 initial_house_temp = 25.5556
 r = 10
 U = 1 / r
 house_outside_heat_capacity = .0229 * 1000 # W/Degrees C
 house_inside_heat_capacity = .016854 * 1000 # W/Degrees C
-house_floor_area = 88 # Square meters
-house_external_perimeter = 9.32 * 4 # Meters
-house_height = 3.2 # Meters
+house_floor_area = 273 # Square meters
+house_external_perimeter = 16.53 * 4 # Meters
+house_height = 3.2 * 1 # Meters
 wall_thickness = 0.05 # Meters
 wall_volume = wall_thickness * house_height * house_external_perimeter # Cubic meters
 C = house_inside_heat_capacity * house_floor_area * house_height + house_outside_heat_capacity * wall_volume # W/Degrees C
@@ -46,6 +46,7 @@ for i in range(len(temps)):
         dispoutsidetemp = temps[i] * 9 / 5 + 32
     else:
        dispoutsidetemp = temps[i]
+       disphousetemp = housetemp
     dispoutsidetemp = round(dispoutsidetemp, 4)
     disphousetemp = round(disphousetemp, 4)
     print("Time: " + str(i))
